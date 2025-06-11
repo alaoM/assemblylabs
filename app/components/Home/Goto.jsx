@@ -1,4 +1,5 @@
 'use client';
+
 import Image from 'next/image';
 import React, { useState } from 'react';
 
@@ -14,7 +15,7 @@ const Goto = () => {
         'Localization of value proposition, roadmap, and messaging',
         'Ecosystem entry strategy: what to say, where to say it, who to partner with',
       ],
-      border: 'border-[#FB1996] shadow-[0_0_10px_10px_rgba(251,25,150,0.5)]'
+      border: 'border-[#FB1996] shadow-[0_0_10px_10px_rgba(251,25,150,0.5)]',
     },
     {
       id: '02',
@@ -22,9 +23,9 @@ const Goto = () => {
       image: '/KOL.svg',
       bullets: [
         'Access to top Korean YouTubers, Twitter voices, and Telegram operators',
-        'Transparent pricing, performance-based tracking'
+        'Transparent pricing, performance-based tracking',
       ],
-      border: 'border-[#19FB5D] shadow-[0_0_10px_10px_rgba(25,251,93,0.5)]'
+      border: 'border-[#19FB5D] shadow-[0_0_10px_10px_rgba(25,251,93,0.5)]',
     },
     {
       id: '03',
@@ -33,9 +34,9 @@ const Goto = () => {
       bullets: [
         'Get featured in Korea’s top crypto publications:',
         'Sponsored articles, interviews, and banner ads',
-        'Full Korean translation and editorial support'
+        'Full Korean translation and editorial support',
       ],
-      border: 'border-[#362FFF] shadow-[0_0_10px_10px_rgba(54,47,255,0.5)]'
+      border: 'border-[#362FFF] shadow-[0_0_10px_10px_rgba(54,47,255,0.5)]',
     },
     {
       id: '04',
@@ -44,9 +45,9 @@ const Goto = () => {
       bullets: [
         'Bilingual community managers and content creators',
         'Local Telegram group setup and moderation',
-        'Discord integration and Korean community segmentation'
+        'Discord integration and Korean community segmentation',
       ],
-      border: 'border-[#CE4901] shadow-[0_0_10px_10px_rgba(206,73,1,0.5)]'
+      border: 'border-[#CE4901] shadow-[0_0_10px_10px_rgba(206,73,1,0.5)]',
     },
     {
       id: '05',
@@ -55,93 +56,84 @@ const Goto = () => {
       bullets: [
         'Seoul meetups, influencer dinners, and conference booths',
         'Coverage across Korean social media and news',
-        'AMA events with live interpretation and media syndication'
+        'AMA events with live interpretation and media syndication',
       ],
-      border: 'border-[#7300FF] shadow-[0_0_10px_10px_rgba(115,0,255,0.5)]'
-    }
+      border: 'border-[#7300FF] shadow-[0_0_10px_10px_rgba(115,0,255,0.5)]',
+    },
   ];
 
   return (
-    <section className="relative w-full bg-black px-[60px] text-white font-[family-name:var(--font-inter)]">
-      {/* Header */}
-      <div className='flex justify-end text-white pt-[60px] pb-[70px]'>
-        <div className='flex items-center gap-2'>
-          <div className='border-r-2 border-t-2 border-red-500 h-[10px] w-[10px]' />
-          <span className='text-[10px] font-semibold uppercase'>Services</span>
-        </div>
-      </div>
+    <div className="relative w-full min-h-screen bg-black overflow-hidden">
+      {/* Background shapes */}
+      <div className="hidden md:block w-36 h-36 absolute left-[80%] top-[10%] opacity-50 bg-gradient-to-br from-pink-500 to-pink-700 rounded-full blur-3xl"></div>
+      <div className="hidden md:block w-36 h-36 absolute left-[60%] top-[50%] opacity-50 bg-gradient-to-br from-green-500 to-green-700 rounded-full blur-3xl"></div>
+      <div className="hidden md:block w-36 h-36 absolute left-[10%] top-[80%] opacity-50 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-full blur-3xl"></div>
 
-      {/* Main Content */}
-     <div className="flex flex-col md:flex-row gap-4 items-stretch">
-  {/* LEFT COLUMN */}
-  <div className="w-full md:w-[65%] flex flex-col gap-0">
-    {data.map((item, index) => (
-      <div
-         key={item.id}
-  className={`border-b border-[#323232] cursor-pointer items-center py-2 ${activeIndex === index ? 'text-[#FFFFFF]' : 'text-[#5A5A5A]'}`}
- 
-        onClick={() => setActiveIndex(index)}
-        // onMouseEnter={() => setActiveIndex(index)}
-      >
-        <h3 className="text-[58px] sm:text-[32px] md:text-[42px] lg:text-[52px] leading-none py-3 sm:py-5">
-          {item.title}
-           <span
-          className="font-[family-name:var(--font-inter)] font-semibold text-[13px] ml-4 align-super whitespace-nowrap "
-          style={{ flexShrink: 0 }}
-        >
-          <span
-            className={`${
-              activeIndex === index ? 'text-[#F9452D]' : 'text-[#5A5A5A]'
-            }`}
-          >{`{ `}</span>
-          <span
-            className={`${
-              activeIndex === index ? 'text-[#fff]' : 'text-[#5A5A5A]'
-            }`}
-          >
-            {item.id}
-          </span>
-          <span
-            className={`${
-              activeIndex === index ? 'text-[#F9452D]' : 'text-[#5A5A5A]'
-            }`}
-          >{` }`}</span>
-        </span>
-        </h3>
-        
-      </div>
-    ))}
-  </div>
-
-  {/* RIGHT COLUMN */}
+      {/* Content */}
+      <div className="flex flex-col items-center gap-6 px-4 py-8 md:px-12 lg:px-24">
+       {data.map((item, index) => (
   <div
-    
-  className={`w-full md:w-[35%] rounded-2xl border-2 flex flex-col px-[35px] pt-[40px] space-y-5 ${data[activeIndex].border}`}>
-
-
-    <div className='flex justify-center'>
-      <Image
-        alt={data[activeIndex].title}
-        src={data[activeIndex].image}
-        width={230}
-        height={230}
-        className="object-contain"
-      />
+    key={item.id}
+    className={`w-full max-w-6xl border-b border-[#323232] py-4 transition-opacity duration-300 ${
+      index === activeIndex ? 'opacity-100' : 'opacity-40'
+    }`}
+    onClick={() => setActiveIndex(index)}
+  >
+    <div className="flex flex-col md:flex-row items-start justify-between gap-4">
+      {/* Title and ID */}
+      <div className="flex-1">
+        <h2 className="text-white text-3xl md:text-5xl font-medium font-inter">
+          {item.title}
+        </h2>
+      </div>
+      <div className="flex items-center gap-1">
+        <span
+          className={`text-sm md:text-base font-bold uppercase ${
+            index === activeIndex ? 'text-[#F9452D]' : 'text-white/20'
+          }`}
+        >
+          {'{'}
+        </span>
+        <span
+          className={`text-sm md:text-base font-bold uppercase ${
+            index === activeIndex ? 'text-white' : 'text-white/40'
+          }`}
+        >
+          {item.id}
+        </span>
+        <span
+          className={`text-sm md:text-base font-bold uppercase ${
+            index === activeIndex ? 'text-[#F9452D]' : 'text-white/20'
+          }`}
+        >
+          {'}'}
+        </span>
+      </div>
     </div>
-    <h3 className="font-[family-name:var(--font-babak)] font-semibold text-[32px] md:text-[32px] lg:text-[32px] text-center">
-      {data[activeIndex].title}
-    </h3>
-    <div>
-      <ul className="list-disc pl-4 md:pl-6 text-[12px] md:text-[14px] lg:text-[16px] space-y-2 md:space-y-3">
-        {data[activeIndex].bullets.map((bullet, idx) => (
-          <li key={idx}>{bullet}</li>
-        ))}
-      </ul>
-    </div>
+
+    {/* Image and Bullets */}
+    {index === activeIndex && (
+      <div className="mt-4 flex flex-col md:flex-row items-start gap-4">
+        <div className="w-full md:w-1/3 relative aspect-[4/3] bg-[#1c1c1c] rounded-lg overflow-hidden">
+          <Image
+            src={item.image}
+            alt={item.title}
+            fill
+            className="object-cover"
+          />
+        </div>
+        <ul className="flex-1 list-disc pl-6 space-y-2 text-white text-base md:text-lg">
+          {item.bullets.map((bullet, i) => (
+            <li key={i}>{bullet}</li>
+          ))}
+        </ul>
+      </div>
+    )}
   </div>
-</div>
+))}
 
-    </section>
+      </div>
+    </div>
   );
 };
 
