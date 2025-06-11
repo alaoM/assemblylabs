@@ -5,20 +5,20 @@ const CTA = () => {
     return (
         <section className="relative w-full bg-black text-white font-[family-name:var(--font-inter)] px-[60px] py-18">
             {/* Header */}
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pl-[40px]">
+            <div className="flex flex-col sm:flex-row justify-between items-start  gap-4 pl-[40px]">
                 <h1
                     className=" text-white text-[82px] font-bold leading-[107.52px] tracking-[-7.84px]"
                 >
                     Let’s Assemble Your Playbook.
                 </h1>
-                <div className='flex items-center gap-2 text-super'>
+                <div className='flex items-center gap-2 align-super'>
                     <div className='border-r-2 border-t-2 border-red-500 h-[10px] w-[10px]' />
                     <span className='text-[10px] font-semibold uppercase'>contact</span>
                 </div>
             </div>
 
             {/* Main Content */}
-            <div className="flex flex-col gap-4 w-full pl-[40px] pr-[30px] pt-8 mx-auto">
+            <div className="flex flex-col gap-4 w-full pl-[40px] pr-[50px] pt-8 mx-auto">
                 {/* Name */}
                 <input
                     type="text"
