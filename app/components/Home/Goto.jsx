@@ -62,19 +62,19 @@ const Goto = () => {
   ];
 
   return (
-    <section className=" relative w-full bg-black p-4 md:p-8 text-white font-[family-name:var(--font-inter)] space-y-20">
+    <section className="relative w-full bg-black px-[60px] text-white font-[family-name:var(--font-inter)]">
       {/* Header */}
-      <div className='flex justify-end text-white '>
+      <div className='flex justify-end text-white pt-[60px] pb-[70px]'>
         <div className='flex items-center gap-2'>
-          <div className='border-r-3 border-t-3 border-red-500 h-[10px] w-[10px]' />
-          <span className='text-[13px] font-semibold uppercase'>Where we Excel</span>
+          <div className='border-r-2 border-t-2 border-red-500 h-[10px] w-[10px]' />
+          <span className='text-[10px] font-semibold uppercase'>Services</span>
         </div>
       </div>
 
       {/* Main Content */}
-     <div className="flex flex-col md:flex-row gap-4 mt-4 items-stretch">
+     <div className="flex flex-col md:flex-row gap-4 items-stretch">
   {/* LEFT COLUMN */}
-  <div className="w-full md:w-[70%] flex flex-col gap-0">
+  <div className="w-full md:w-[65%] flex flex-col gap-0">
     {data.map((item, index) => (
       <div
          key={item.id}
@@ -83,10 +83,8 @@ const Goto = () => {
         onClick={() => setActiveIndex(index)}
         // onMouseEnter={() => setActiveIndex(index)}
       >
-        <h3 className="text-[44px] sm:text-[32px] md:text-[42px] lg:text-[52px] leading-none py-3 sm:py-5">
+        <h3 className="text-[58px] sm:text-[32px] md:text-[42px] lg:text-[52px] leading-none py-3 sm:py-5">
           {item.title}
-
-
            <span
           className="font-[family-name:var(--font-inter)] font-semibold text-[13px] ml-4 align-super whitespace-nowrap "
           style={{ flexShrink: 0 }}
@@ -118,19 +116,19 @@ const Goto = () => {
   {/* RIGHT COLUMN */}
   <div
     
-  className={`w-full md:w-[30%] rounded-2xl border-2 flex flex-col justify-center items-center p-5 space-y-5 ${data[activeIndex].border}`}>
+  className={`w-full md:w-[35%] rounded-2xl border-2 flex flex-col px-[35px] pt-[40px] space-y-5 ${data[activeIndex].border}`}>
 
 
-    <div>
+    <div className='flex justify-center'>
       <Image
         alt={data[activeIndex].title}
         src={data[activeIndex].image}
-        width={150}
-        height={150}
+        width={230}
+        height={230}
         className="object-contain"
       />
     </div>
-    <h3 className="font-[family-name:var(--font-babak)] text-[28px] md:text-[32px] lg:text-[36px] text-center">
+    <h3 className="font-[family-name:var(--font-babak)] font-semibold text-[32px] md:text-[32px] lg:text-[32px] text-center">
       {data[activeIndex].title}
     </h3>
     <div>

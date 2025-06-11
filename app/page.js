@@ -6,13 +6,15 @@ import Showcase from "./components/Home/Showcase";
 
 export default function Home() {
   return (
-    <>
-    
-    <Hero/> 
-     <Goto/> 
-     <Showcase/>
-     <CTA/>
-    
-    </>
+    <div className="space-y-0">
+      <Hero />
+      <Goto />
+      {/* <Showcase/> */}
+      <CTA />
+    </div>
+
+
+
+
   );
 }
