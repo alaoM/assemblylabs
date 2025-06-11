@@ -1,140 +1,133 @@
-'use client';
+import React from 'react';
 
-import Image from 'next/image';
-import React, { useState } from 'react';
-
-const Goto = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const data = [
-    {
-      id: '01',
-      title: 'Go-To-Market Strategy',
-      image: '/gtm.png',
-      bullets: [
-        'Localization of value proposition, roadmap, and messaging',
-        'Ecosystem entry strategy: what to say, where to say it, who to partner with',
-      ],
-      border: 'border-[#FB1996] shadow-[0_0_10px_10px_rgba(251,25,150,0.5)]',
-    },
-    {
-      id: '02',
-      title: 'Influencer & KOL Marketing',
-      image: '/KOL.svg',
-      bullets: [
-        'Access to top Korean YouTubers, Twitter voices, and Telegram operators',
-        'Transparent pricing, performance-based tracking',
-      ],
-      border: 'border-[#19FB5D] shadow-[0_0_10px_10px_rgba(25,251,93,0.5)]',
-    },
-    {
-      id: '03',
-      title: 'Crypto PR & Media Placement',
-      image: '/PR.svg',
-      bullets: [
-        'Get featured in Korea’s top crypto publications:',
-        'Sponsored articles, interviews, and banner ads',
-        'Full Korean translation and editorial support',
-      ],
-      border: 'border-[#362FFF] shadow-[0_0_10px_10px_rgba(54,47,255,0.5)]',
-    },
-    {
-      id: '04',
-      title: 'Community Growth',
-      image: '/CG.svg',
-      bullets: [
-        'Bilingual community managers and content creators',
-        'Local Telegram group setup and moderation',
-        'Discord integration and Korean community segmentation',
-      ],
-      border: 'border-[#CE4901] shadow-[0_0_10px_10px_rgba(206,73,1,0.5)]',
-    },
-    {
-      id: '05',
-      title: 'IRL Activation & Events',
-      image: '/AE.svg',
-      bullets: [
-        'Seoul meetups, influencer dinners, and conference booths',
-        'Coverage across Korean social media and news',
-        'AMA events with live interpretation and media syndication',
-      ],
-      border: 'border-[#7300FF] shadow-[0_0_10px_10px_rgba(115,0,255,0.5)]',
-    },
-  ];
-
+const StrategySections = () => {
   return (
-    <div className="relative w-full min-h-screen bg-black overflow-hidden">
-      {/* Background shapes */}
-      <div className="hidden md:block w-36 h-36 absolute left-[80%] top-[10%] opacity-50 bg-gradient-to-br from-pink-500 to-pink-700 rounded-full blur-3xl"></div>
-      <div className="hidden md:block w-36 h-36 absolute left-[60%] top-[50%] opacity-50 bg-gradient-to-br from-green-500 to-green-700 rounded-full blur-3xl"></div>
-      <div className="hidden md:block w-36 h-36 absolute left-[10%] top-[80%] opacity-50 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-full blur-3xl"></div>
+    <div className="relative w-[1920px] h-[1080px] bg-black overflow-hidden">
+      {/* Floating semi-transparent boxes */}
+      <div className="absolute w-[150px] h-[150px] left-[1570px] top-[166px] opacity-50 bg-white"></div>
+      <div className="absolute w-[150px] h-[150px] left-[1169px] top-[682px] opacity-50 bg-white"></div>
+      <div className="absolute w-[150px] h-[150px] left-[186px] top-[914px] opacity-50 bg-white"></div>
 
-      {/* Content */}
-      <div className="flex flex-col items-center gap-6 px-4 py-8 md:px-12 lg:px-24">
-       {data.map((item, index) => (
-  <div
-    key={item.id}
-    className={`w-full max-w-6xl border-b border-[#323232] py-4 transition-opacity duration-300 ${
-      index === activeIndex ? 'opacity-100' : 'opacity-40'
-    }`}
-    onClick={() => setActiveIndex(index)}
-  >
-    <div className="flex flex-col md:flex-row items-start justify-between gap-4">
-      {/* Title and ID */}
-      <div className="flex-1">
-        <h2 className="text-white text-3xl md:text-5xl font-medium font-inter">
-          {item.title}
-        </h2>
-      </div>
-      <div className="flex items-center gap-1">
-        <span
-          className={`text-sm md:text-base font-bold uppercase ${
-            index === activeIndex ? 'text-[#F9452D]' : 'text-white/20'
-          }`}
-        >
-          {'{'}
-        </span>
-        <span
-          className={`text-sm md:text-base font-bold uppercase ${
-            index === activeIndex ? 'text-white' : 'text-white/40'
-          }`}
-        >
-          {item.id}
-        </span>
-        <span
-          className={`text-sm md:text-base font-bold uppercase ${
-            index === activeIndex ? 'text-[#F9452D]' : 'text-white/20'
-          }`}
-        >
-          {'}'}
-        </span>
-      </div>
-    </div>
-
-    {/* Image and Bullets */}
-    {index === activeIndex && (
-      <div className="mt-4 flex flex-col md:flex-row items-start gap-4">
-        <div className="w-full md:w-1/3 relative aspect-[4/3] bg-[#1c1c1c] rounded-lg overflow-hidden">
-          <Image
-            src={item.image}
-            alt={item.title}
-            fill
-            className="object-cover"
-          />
+      {/* Section 1 */}
+      <div className="absolute left-[60px] top-[166px] w-[1180px] h-[142px] flex flex-col items-start">
+        <div className="relative w-full h-[142px] flex flex-col justify-start items-start pt-[10px] pb-[20px] overflow-hidden">
+          <div className="relative w-full h-[112.2px]">
+            <div className="absolute top-[-0.1px] left-0 flex flex-col">
+              <div className="flex flex-col">
+                <div className="text-white text-[90px] font-medium font-inter leading-[1.2]">
+                  Go-To-Market Strategy
+                </div>
+              </div>
+            </div>
+            <div className="absolute top-[-1px] left-[875.92px] flex items-center gap-[4px]">
+              <Bracket color="#F9452D" />
+              <NumberIndicator number="01" color="white" />
+              <Bracket color="#F9452D" />
+            </div>
+          </div>
+          <div className="absolute top-0 left-0 w-[1180px] h-[142px] border-b border-[#323232]"></div>
         </div>
-        <ul className="flex-1 list-disc pl-6 space-y-2 text-white text-base md:text-lg">
-          {item.bullets.map((bullet, i) => (
-            <li key={i}>{bullet}</li>
-          ))}
-        </ul>
       </div>
-    )}
-  </div>
-))}
 
+      {/* Section 2 */}
+      <Section
+        top={318}
+        text="Influencer & KOL Marketing"
+        indicatorLeft={1001.03}
+        number="02"
+      />
+
+      {/* Section 3 */}
+      <Section
+        top={470}
+        text="Crypto PR & Media Placement"
+        indicatorLeft={1109.97}
+        number="03"
+      />
+
+      {/* Section 4 */}
+      <Section
+        top={622}
+        text="Community Growth"
+        indicatorLeft={723.13}
+        number="04"
+      />
+
+      {/* Section 5 */}
+      <div className="absolute left-[60px] top-[774px] w-[1180px] h-[142px] flex flex-col items-start">
+        <div className="relative w-full pt-[10px] pb-[20px] overflow-hidden flex flex-col">
+          <div className="w-full flex items-start gap-[24px]">
+            <div className="opacity-15 flex flex-col">
+              <div className="flex flex-col">
+                <div className="text-white text-[90px] font-medium font-inter leading-[1.2]">
+                  IRL Activation & Events
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-[4px]">
+              <Bracket color="rgba(255,255,255,0.20)" size="20px" />
+              <NumberIndicator number="05" color="rgba(255,255,255,0.40)" size="20px" />
+              <Bracket color="rgba(255,255,255,0.20)" size="20px" />
+            </div>
+          </div>
+          <div className="absolute top-0 left-0 w-[1180px] h-[144.88px] border-b border-[#323232]"></div>
+        </div>
+      </div>
+
+      {/* Extra element example */}
+      <div className="absolute left-[1240px] top-[180px] w-[600px] h-[720px] bg-black rounded-[32px] shadow-[0px_4px_25px_20px_rgba(251,25,150,0.25)] overflow-hidden"></div>
+    </div>
+  );
+};
+
+const Section = ({ top, text, indicatorLeft, number }) => {
+  return (
+    <div className={`absolute left-[60px] top-[${top}px] w-[1180px] h-[142px] flex flex-col items-start`}>
+      <div className="relative w-full pt-[10px] pb-[20px] overflow-hidden flex flex-col">
+        <div className="relative w-full h-[112.2px]">
+          <div className="absolute top-0 left-0 opacity-15 flex flex-col">
+            <div className="flex flex-col">
+              <div className="text-white text-[90px] font-medium font-inter leading-[1.2]">
+                {text}
+              </div>
+            </div>
+          </div>
+          <div className={`absolute top-[-1px] left-[${indicatorLeft}px] flex items-center gap-[4px]`}>
+            <Bracket color="rgba(255,255,255,0.20)" />
+            <NumberIndicator number={number} color="rgba(255,255,255,0.40)" />
+            <Bracket color="rgba(255,255,255,0.20)" />
+          </div>
+        </div>
+        <div className="absolute top-0 left-0 w-[1180px] h-[142.2px] border-b border-[#323232]"></div>
       </div>
     </div>
   );
 };
 
-export default Goto;
+const Bracket = ({ color, size = "16px" }) => (
+  <div className="flex flex-col">
+    <div className="flex justify-center flex-col">
+      <div
+        className="font-inter font-bold uppercase leading-[1.2]"
+        style={{ color: color, fontSize: size }}
+      >
+        {'{'}
+      </div>
+    </div>
+  </div>
+);
+
+const NumberIndicator = ({ number, color, size = "16px" }) => (
+  <div className="flex flex-col">
+    <div className="flex justify-center flex-col">
+      <div
+        className="font-inter font-bold uppercase leading-[1.2]"
+        style={{ color: color, fontSize: size }}
+      >
+        {number}
+      </div>
+    </div>
+  </div>
+);
+
+export default StrategySections;
